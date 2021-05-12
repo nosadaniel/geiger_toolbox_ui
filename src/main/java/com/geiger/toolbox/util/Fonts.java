@@ -9,6 +9,7 @@ public class Fonts {
     public static Font nunitoLightDefaultSize;
     public static Font nunitoBoldFont;
     public static Font nunitoItalic;
+    public static Font nunitoBoldScoreSize;
     static{
 
         //Nunito Regular
@@ -22,5 +23,7 @@ public class Fonts {
 
         //Nunito italic
         nunitoItalic = Font.getFont("fonts/Nunito-Italic.ttf", false, FONT_DEFAULT_SIZE);
+
+        nunitoBoldScoreSize = Font.getFont("fonts/Nunito-Bold.ttf", true, 36);
     }
 }
