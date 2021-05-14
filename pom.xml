@@ -18,7 +18,13 @@
         <dependency>
             <groupId>com.totalcross</groupId>
             <artifactId>totalcross-sdk</artifactId>
-            <version>7.1.0</version>
+            <version>7.0.1</version>
+        </dependency>
+
+         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.5.6</version>
         </dependency>
     </dependencies>
 
@@ -58,7 +64,7 @@
                     <name>${project.name}</name>
                     <platforms>
                         <platform>-android</platform>
-<platform>-ios</platform>
+                            <platform>-ios</platform>
                     </platforms>
                     <activationKey>${totalcross.activation_key}</activationKey>
                     <!--                    For version 4.4.2 and 5.1.4 or later, Apple certificates are no longer required. -->

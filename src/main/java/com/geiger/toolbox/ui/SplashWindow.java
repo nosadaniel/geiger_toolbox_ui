@@ -2,7 +2,6 @@ package com.geiger.toolbox.ui;
 
 import java.io.IOException;
 
-import com.geiger.toolbox.util.Colors;
 import com.geiger.toolbox.util.Images;
 
 import totalcross.ui.ImageControl;

@@ -20,7 +20,7 @@ public class ToolboxUi extends MainWindow {
     static {
 		Settings.applicationId = "GTB";
 		Settings.appVersion = "1.0.0";
-		Settings.iosCFBundleIdentifier = "com.geiger.toolbox";
+		Settings.iosCFBundleIdentifier = "com.geiger.toolboxUi";
 	}
     @Override
     public void initUI() {
