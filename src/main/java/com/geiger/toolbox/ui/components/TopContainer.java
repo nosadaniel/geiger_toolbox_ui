@@ -9,24 +9,26 @@ import totalcross.ui.Container;
 import totalcross.ui.FloatingActionButton;
 import totalcross.ui.Label;
 
+
 public class TopContainer extends Container{
-    private Container cont;
+  
 
     public void initUI(){
-        // cont = new Container();
-        // add(cont, LEFT, TOP, FILL, PREFERRED);
+      
 
 
         Label text = new Label("Your Risk Score:");
         add(text,CENTER, TOP+4);
+
+        Images path = new Images("images/scan_btn2.png");
 
         Label score = new Label("73.5");
         score.setForeColor(Colors.SCORE_COLOR);
         score.setFont(Fonts.nunitoBoldScoreSize);
         add(score, CENTER, AFTER+2);
 
-        FloatingActionButton scanBtn = new FloatingActionButton(Images.scan_icon);
-        scanBtn.setIcon(Images.scan_icon);
+        FloatingActionButton scanBtn = new FloatingActionButton(path.getImage());
+        scanBtn.setIcon(path.getImage());
         scanBtn.setIconSize(33);
         add(scanBtn, CENTER, AFTER+2);
 

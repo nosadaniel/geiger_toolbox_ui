@@ -24,7 +24,7 @@ import totalcross.ui.image.ImageException;
 public class ToolboxUi extends MainWindow {
 
         //SideMenu Content
-        SideMenuContainer.Item scanRisk = new SideMenuContainer.Item("Scan Risk", MaterialIcons._DO_NOT_DISTURB_ALT, Color.WHITE, () -> { return new ScanRiskScreen(); });
+        SideMenuContainer.Item scanRisk = new SideMenuContainer.Item("GEIGER ToolBox", MaterialIcons._DO_NOT_DISTURB_ALT, Color.WHITE, () -> { return new ScanRiskScreen(); });
         SideMenuContainer.Item compareRisk = new SideMenuContainer.Item("Compare Risk", MaterialIcons._DO_NOT_DISTURB_ALT, Color.WHITE, () -> { return new CompareRiskScreen(); });
         SideMenuContainer.Item devices = new SideMenuContainer.Item("Devices", MaterialIcons._DO_NOT_DISTURB_ALT, Color.WHITE, () -> { return new DevicesScreen(); });
         SideMenuContainer.Item employees = new SideMenuContainer.Item("Employees", MaterialIcons._DO_NOT_DISTURB_ALT, Color.WHITE, () -> { return new EmployeesScreen(); });
