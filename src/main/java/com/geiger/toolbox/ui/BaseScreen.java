@@ -16,25 +16,32 @@ import totalcross.ui.icon.IconType;
 import totalcross.util.UnitsConverter;
 import totalcross.util.concurrent.Lock;
 
+
+
+
 public abstract class BaseScreen extends Container {
     public Bar bar;
     protected ScrollContainer content;
     protected boolean allowVerticalScroll = true;
     protected boolean allowHorizontalScroll = false;
 
+
+
     @Override
     public void initUI(){
         
         Images.loadImage();
+        /*
         bar = new Bar("Geiger Toolbox");
         bar.addButton(Images.nav_icon, false);
         bar.setFont(Fonts.nunitoBoldFont);
         bar.setForeColor(Colors.TEXT_BLACK);
+        */
 
         System.out.println("TOP BAR SHOWING" );
 
         //place bar at the top of the screen
-        add(bar, LEFT, TOP, FILL, PREFERRED);
+        //add(bar, LEFT, TOP, FILL, PREFERRED);
 
         
 
@@ -45,8 +52,10 @@ public abstract class BaseScreen extends Container {
                 super.initUI();
             }
         };
+        
+
         // Content
-        add(content, LEFT, AFTER, PARENTSIZE, FILL);
+        add(content, CENTER, AFTER, PARENTSIZE, FILL);
         onContent(content);
 
     }

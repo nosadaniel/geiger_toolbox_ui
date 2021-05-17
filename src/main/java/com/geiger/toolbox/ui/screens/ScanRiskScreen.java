@@ -1,24 +1,13 @@
-package com.geiger.toolbox.ui;
+package com.geiger.toolbox.ui.screens;
 
-
-
+import com.geiger.toolbox.ui.BaseScreen;
 import com.geiger.toolbox.ui.components.CardThreat;
 import com.geiger.toolbox.ui.components.TopContainer;
-import com.geiger.toolbox.util.Colors;
-import com.geiger.toolbox.util.Fonts;
-import com.geiger.toolbox.util.Images;
-import com.geiger.toolbox.util.MaterialConstants;
-
 import totalcross.sys.Settings;
-import totalcross.ui.Button;
-import totalcross.ui.Container;
-import totalcross.ui.FloatingActionButton;
-import totalcross.ui.Label;
 import totalcross.ui.ScrollContainer;
 import totalcross.util.UnitsConverter;
 
-
-public class HomeScreen extends BaseScreen{
+public class ScanRiskScreen extends BaseScreen{
     
     private int gap = (int) (Settings.screenDensity * 10);
    
