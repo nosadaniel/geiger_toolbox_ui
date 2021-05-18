@@ -17,20 +17,20 @@ public class CardThreat extends Container{;
 
     private Label threatText;
     private ImageControl threatIcon;
-    private ImageControl threatIndicator;
+    private IndicatorGauge threatIndicator;
     private Label riskText;
     private Button btnImprove;
    
 
     String threatTitle;
     Images riskIcon;
-    Images riskIndicator; 
+    int indicatorValue;
     String riskLevel;
     
-    public CardThreat(String threatTitle, Images riskIcon, Images riskIndicator, String riskLevel){
+    public CardThreat(String threatTitle, Images riskIcon, int indicatorValue, String riskLevel){
             this.threatTitle = threatTitle;
             this.riskIcon = riskIcon;
-            this.riskIndicator = riskIndicator;
+            this.indicatorValue = indicatorValue;
             this.riskLevel = riskLevel;
     }
 
@@ -38,9 +38,9 @@ public class CardThreat extends Container{;
 
         try{
             
-            int textGap = UnitsConverter.toPixels(DP + 10);
+            int textGap = UnitsConverter.toPixels(DP + 4);
             int gap = UnitsConverter.toPixels(DP + 32);
-            int imageSize = UnitsConverter.toPixels(DP + 64);
+            int imageSize = UnitsConverter.toPixels(DP + 110);
             final int margin = UnitsConverter.toPixels(DP + 6);
 
             threatIcon = new ImageControl( riskIcon.getImage()
@@ -49,13 +49,13 @@ public class CardThreat extends Container{;
             threatIcon.centerImage = true;
             
             threatText = new Label(threatTitle);
+            threatText.autoSplit = true;
             threatText.setFont(Fonts.nunitoBoldFont);
             threatText.setForeColor(Colors.TEXT_BLACK);
            
 
-            threatIndicator = new ImageControl( riskIndicator.getImage()
-            .hwScaledFixedAspectRatio(imageSize, true));
-
+            threatIndicator = new IndicatorGauge(indicatorValue);
+            
             riskText = new Label(riskLevel);
             riskText.setFont(Fonts.nunitoRiskLevel);
             riskText.setForeColor(Colors.S_LIGHT);
@@ -66,14 +66,14 @@ public class CardThreat extends Container{;
             
             
 
-            add(threatText, LEFT + textGap, TOP + margin);
-            add(threatIcon, CENTER, CENTER + gap, PREFERRED, PREFERRED);
-            add(threatIndicator, RIGHT + margin, TOP + margin, PREFERRED + gap, PREFERRED - gap);
+            add(threatText, LEFT + textGap, TOP + margin, PREFERRED, PREFERRED);
+            add(threatIcon, CENTER, CENTER, PREFERRED, PREFERRED);
+            add(threatIndicator, RIGHT, TOP, PARENTSIZE + 26, PARENTSIZE + 50);
             add(riskText, RIGHT, AFTER, PREFERRED + gap, PREFERRED);
             add(btnImprove, RIGHT, AFTER, PREFERRED, PREFERRED);
             
             
-            resizeHeight();
+            
             
             setBorderStyle(BORDER_LOWERED);
             setBorderRadius(8);

@@ -2,6 +2,7 @@ package com.geiger.toolbox.ui.screens;
 
 import com.geiger.toolbox.ui.BaseScreen;
 import com.geiger.toolbox.ui.components.CardThreat;
+import com.geiger.toolbox.ui.components.IndicatorGauge;
 import com.geiger.toolbox.ui.components.TopContainer;
 import com.geiger.toolbox.util.Images;
 
@@ -22,11 +23,11 @@ public class ScanRiskScreen extends BaseScreen{
         content.setInsets(0, 0, DP_10, DP_10);
         int space = UnitsConverter.toPixels(DP + 10);
         content.add(new TopContainer(),LEFT +gap, AFTER, FILL - space, PREFERRED);  
-        content.add(new CardThreat("Phishing", new Images("images/phishing.png"), new Images("images/indicator.png"), "High"), LEFT + gap, AFTER + space, FILL - gap, PREFERRED);
-        content.add(new CardThreat("Malware", new Images("images/malware.png"), new Images("images/indicator.png"), "Low"), LEFT + gap, AFTER + space, FILL - gap, PREFERRED);
-        content.add(new CardThreat("Spam", new Images("images/spam.png"), new Images("images/indicator.png"), "High"), LEFT + gap, AFTER + space, FILL - gap, PREFERRED);
-        content.add(new CardThreat("Web Attack", new Images("images/web_attack.png"), new Images("images/indicator.png"), "Very High"), LEFT + gap, AFTER + space, FILL - gap, PREFERRED + UnitsConverter.toPixels(DP + 30));
-
+        content.add(new CardThreat("Phishing", new Images("images/phishing.png"), 77, "High"), LEFT + gap, AFTER + space, FILL - gap, 130+ DP);
+        content.add(new CardThreat("Malware", new Images("images/malware.png"), 2, "Low"), LEFT + gap, AFTER + space, FILL - gap, 130+ DP);
+        content.add(new CardThreat("Spam", new Images("images/spam.png"), 4, "High"), LEFT + gap, AFTER + space, FILL - gap, 130+ DP);
+        content.add(new CardThreat("Web Attack", new Images("images/web_attack.png"), 50, "Very High"), LEFT + gap, AFTER + space, FILL - gap, 130+ DP);
+        
 
         
     }

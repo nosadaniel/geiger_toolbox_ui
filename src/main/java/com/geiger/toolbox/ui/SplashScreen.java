@@ -9,7 +9,6 @@ import totalcross.ui.Window;
 import totalcross.ui.anim.ControlAnimation;
 import totalcross.ui.anim.FadeAnimation;
 import totalcross.ui.image.ImageException;
-import totalcross.util.UnitsConverter;
 
 public class SplashScreen extends Window {
     public SplashScreen() throws IOException, ImageException{
