@@ -2,7 +2,7 @@ package com.geiger.toolbox.ui.screens;
 
 import com.geiger.toolbox.ui.BaseScreen;
 import com.geiger.toolbox.ui.components.CardThreat;
-import com.geiger.toolbox.ui.components.IndicatorGauge;
+
 import com.geiger.toolbox.ui.components.TopContainer;
 import com.geiger.toolbox.util.Images;
 

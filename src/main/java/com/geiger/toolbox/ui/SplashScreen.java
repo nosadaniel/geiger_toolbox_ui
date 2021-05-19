@@ -8,6 +8,7 @@ import totalcross.ui.ImageControl;
 import totalcross.ui.Window;
 import totalcross.ui.anim.ControlAnimation;
 import totalcross.ui.anim.FadeAnimation;
+import totalcross.ui.anim.ControlAnimation.AnimationFinished;
 import totalcross.ui.image.ImageException;
 
 public class SplashScreen extends Window {
@@ -26,9 +27,8 @@ public class SplashScreen extends Window {
             add(logo, CENTER, CENTER, PARENTSIZE, PARENTSIZE);
 
             FadeAnimation.create(logo, true, null, 2000)
-                .then(FadeAnimation.create(logo, false, this::onAnimationFinished, 4000)).start();
+                .then(FadeAnimation.create(logo, false, this::onAnimationFinished, 2000)).start();
     
-          
         }
     public void onAnimationFinished(ControlAnimation anim){
         this.unpop();

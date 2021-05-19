@@ -2,9 +2,9 @@ package com.geiger.toolbox;
 
 import java.io.IOException;
 
-import com.geiger.toolbox.ui.SplashScreen;
 
 import com.geiger.toolbox.ui.screens.ScanRiskScreen;
+import com.geiger.toolbox.ui.SplashScreen;
 import com.geiger.toolbox.ui.screens.CompareRiskScreen;
 import com.geiger.toolbox.ui.screens.DevicesScreen;
 import com.geiger.toolbox.ui.screens.EmployeesScreen;
@@ -41,12 +41,14 @@ public class ToolboxUi extends MainWindow {
         
     }
     static {
-		Settings.applicationId = "GTB";
+		Settings.applicationId = "CGTB";
 		Settings.appVersion = "1.0.0";
 		Settings.iosCFBundleIdentifier = "com.geiger.toolboxUi";
 	}
     @Override
     public void initUI() {
+
+        
         SplashScreen sp;
         ScanRiskScreen homeScreen = new ScanRiskScreen();
         try{
