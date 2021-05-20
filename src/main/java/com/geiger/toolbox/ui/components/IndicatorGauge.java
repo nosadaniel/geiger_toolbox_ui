@@ -25,9 +25,10 @@ public class IndicatorGauge extends Container {
 			vel.max = 100;
 			vel.drawMin = false;
 			vel.drawMax = false;
+			vel.drawValue = false;
 			vel.min = 0;	
     		vel.pointerColor = Colors.PRIMARY;
-			add(vel, CENTER, CENTER, PARENTSIZE, PARENTSIZE );
+			add(vel, CENTER, CENTER, PARENTSIZE, PARENTSIZE);
 	
 		} catch (Exception e) {
 			e.printStackTrace();

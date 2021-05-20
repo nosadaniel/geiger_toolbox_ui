@@ -7,9 +7,12 @@ import com.geiger.toolbox.util.Images;
 
 import totalcross.ui.Button;
 import totalcross.ui.Container;
+import totalcross.ui.Control;
 import totalcross.ui.ImageControl;
 import totalcross.ui.Label;
-
+import totalcross.ui.MainWindow;
+import totalcross.ui.MaterialWindow;
+import totalcross.ui.Presenter;
 import totalcross.ui.image.ImageException;
 import totalcross.util.UnitsConverter;
 
@@ -26,12 +29,15 @@ public class CardThreat extends Container{;
     Images riskIcon;
     int indicatorValue;
     String riskLevel;
-    
-    public CardThreat(String threatTitle, Images riskIcon, int indicatorValue, String riskLevel){
+    Container screen;
+   
+    public CardThreat(String threatTitle, Images riskIcon, int indicatorValue, String riskLevel, Container screen){
             this.threatTitle = threatTitle;
             this.riskIcon = riskIcon;
             this.indicatorValue = indicatorValue;
             this.riskLevel = riskLevel;
+            this.screen =  screen;
+            
     }
 
     public void initUI(){
@@ -63,20 +69,30 @@ public class CardThreat extends Container{;
             btnImprove = new Button("Improve", Button.BORDER_ROUND);
             btnImprove.setBackColor(Colors.PRIMARY);
             btnImprove.setForeColor(Colors.TEXT_ON_P);
+            btnImprove.addPressListener(
+                (e) -> {
+                    MaterialWindow info = new MaterialWindow(threatTitle, false, new Presenter<Container>() {  
+                        @Override
+                        public Container getView(){
+                            return screen;
+                        }
+                    });
+                    info.popup();
+                });
             
             
 
             add(threatText, LEFT + textGap, TOP + margin, PREFERRED, PREFERRED);
             add(threatIcon, CENTER, CENTER, PREFERRED, PREFERRED);
-            add(threatIndicator, RIGHT, TOP, PARENTSIZE + 26, PARENTSIZE + 50);
-            add(riskText, RIGHT, AFTER, PREFERRED + gap, PREFERRED);
-            add(btnImprove, RIGHT, AFTER, PREFERRED, PREFERRED);
+            add(threatIndicator, RIGHT - UnitsConverter.toPixels(DP + 2), TOP + 5, PARENTSIZE + UnitsConverter.toPixels(DP + 25) , PARENTSIZE + UnitsConverter.toPixels(DP + 45));
+            add(riskText, RIGHT - gap, AFTER);
+            add(btnImprove, RIGHT - margin, AFTER - UnitsConverter.toPixels(DP + 2));
             
             
             
             
             setBorderStyle(BORDER_LOWERED);
-            setBorderRadius(8);
+            // setBorderRadius(28);
         }
         catch(ImageException e){
             e.printStackTrace();
