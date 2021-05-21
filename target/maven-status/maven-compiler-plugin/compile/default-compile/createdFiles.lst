@@ -7,6 +7,7 @@ com/geiger/toolbox/ui/screens/UpdateToolboxScreen.class
 com/geiger/toolbox/ui/screens/RecommendationScreen.class
 com/geiger/toolbox/util/MaterialConstants.class
 com/geiger/toolbox/ui/screens/ToolsScreen.class
+com/geiger/toolbox/ui/components/CardRecommendation.class
 com/geiger/toolbox/util/Images.class
 com/geiger/toolbox/util/Fonts.class
 com/geiger/toolbox/ui/BaseScreen$1.class
