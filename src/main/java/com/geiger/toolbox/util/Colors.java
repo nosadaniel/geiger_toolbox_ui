@@ -16,6 +16,9 @@ public class Colors {
 	public static int S_LIGHT = 0x5A7385;
 	public static int S_DARK = 0x04212F;
 
+	//Background
+	public static int WHITE = 0xFFFFFF;
+
 	//Texts Colors
 	public static int TEXT_ON_P = 0xFFFFFF;
 	public static int TEXT_ON_P_LIGHT = 0x000000;
