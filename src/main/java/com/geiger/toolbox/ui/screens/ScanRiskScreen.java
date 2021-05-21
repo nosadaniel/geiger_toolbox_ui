@@ -13,9 +13,9 @@ import totalcross.util.UnitsConverter;
 
 public class ScanRiskScreen extends BaseScreen{
     
-    private int gap = (int) (Settings.screenDensity * 10);
    
-    
+
+    private int gap = (int) (Settings.screenDensity * 10);
    
     @Override
     public void onContent(ScrollContainer content){

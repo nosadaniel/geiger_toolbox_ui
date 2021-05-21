@@ -5,6 +5,7 @@ com\geiger\toolbox\util\Fonts.class
 com\geiger\toolbox\ui\BaseScreen$1.class
 com\geiger\toolbox\util\Images.class
 com\geiger\toolbox\ui\screens\CompareRiskScreen.class
+com\geiger\toolbox\model\localStorageAPI.class
 com\geiger\toolbox\ui\components\CardThreat.class
 com\geiger\toolbox\ui\components\TopContainer.class
 com\geiger\toolbox\ui\BaseScreen.class

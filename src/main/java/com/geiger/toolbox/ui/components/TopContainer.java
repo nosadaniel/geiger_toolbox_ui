@@ -3,7 +3,6 @@ package com.geiger.toolbox.ui.components;
 import com.geiger.toolbox.util.Colors;
 import com.geiger.toolbox.util.Fonts;
 import com.geiger.toolbox.util.Images;
-
 import totalcross.ui.Button;
 import totalcross.ui.Container;
 import totalcross.ui.FloatingActionButton;
@@ -12,10 +11,7 @@ import totalcross.ui.Label;
 
 public class TopContainer extends Container{
   
-
     public void initUI(){
-      
-
 
         Label text = new Label("Your Risk Score:");
         add(text,CENTER, TOP+4);
