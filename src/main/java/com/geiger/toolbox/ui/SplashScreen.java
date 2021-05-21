@@ -26,8 +26,8 @@ public class SplashScreen extends Window {
             logo.transparentBackground = true;
             add(logo, CENTER, CENTER, PARENTSIZE, PARENTSIZE);
 
-            FadeAnimation.create(logo, true, null, 2000)
-                .then(FadeAnimation.create(logo, false, this::onAnimationFinished, 2000)).start();
+            FadeAnimation.create(logo, true, null, 1000)
+                .then(FadeAnimation.create(logo, false, this::onAnimationFinished, 500)).start();
     
         }
     public void onAnimationFinished(ControlAnimation anim){

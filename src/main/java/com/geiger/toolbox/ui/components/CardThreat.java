@@ -84,8 +84,8 @@ public class CardThreat extends Container{;
 
             add(threatText, LEFT + textGap, TOP + margin, PREFERRED, PREFERRED);
             add(threatIcon, CENTER, CENTER, PREFERRED, PREFERRED);
-            add(threatIndicator, RIGHT - UnitsConverter.toPixels(DP + 2), TOP + 5, PARENTSIZE + UnitsConverter.toPixels(DP + 25) , PARENTSIZE + UnitsConverter.toPixels(DP + 45));
-            add(riskText, RIGHT - gap, AFTER);
+            add(threatIndicator, RIGHT - 2, TOP + 5, PARENTSIZE + 25 , PARENTSIZE + 45);
+            add(riskText, RIGHT - gap, AFTER + 2);
             add(btnImprove, RIGHT - margin, AFTER - UnitsConverter.toPixels(DP + 2));
             
             

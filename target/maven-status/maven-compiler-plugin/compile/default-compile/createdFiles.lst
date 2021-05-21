@@ -7,6 +7,7 @@ com/geiger/toolbox/util/MaterialConstants.class
 com/geiger/toolbox/ui/screens/ToolsScreen.class
 com/geiger/toolbox/util/Images.class
 com/geiger/toolbox/util/Fonts.class
+com/geiger/toolbox/ui/screens/PhishingScreen.class
 com/geiger/toolbox/ui/BaseScreen$1.class
 com/geiger/toolbox/ui/components/TopContainer.class
 com/geiger/toolbox/ui/screens/SettingsScreen.class
@@ -15,6 +16,7 @@ com/geiger/toolbox/ui/SplashScreen.class
 com/geiger/toolbox/ui/screens/CompareRiskScreen.class
 com/geiger/toolbox/ui/screens/EmployeesScreen.class
 com/geiger/toolbox/ui/screens/ScanRiskScreen.class
+com/geiger/toolbox/ui/components/CardThreat$1.class
 com/geiger/toolbox/RunToolboxUiApplication.class
 com/geiger/toolbox/ToolboxUi.class
 com/geiger/toolbox/ui/screens/ContactDefenderScreen.class
