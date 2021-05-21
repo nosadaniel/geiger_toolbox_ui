@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="maven-antrun-" default="main"  >
 <target name="main">
-  <exec failonerror="true" executable="C:\Users\Louis\AppData\Local\TotalCross\zulu_jdk_11\bin\java">
-    <arg value="-Dretrolambda.classpathFile=C:\Users\Louis\AppData\Local\Temp\retrolambda18061737523152584258classpath"/>
+  <exec failonerror="true" executable="/Users/nosakharedanielahanor/Library/Application Support/TotalCross/zulu_jdk_11/zulu-11.jdk/Contents/Home/bin/java">
+    <arg value="-Dretrolambda.classpathFile=/var/folders/bk/ymqhh60x7697b3hj12tx00l40000gn/T/retrolambda4709883358705765992classpath"/>
     <arg value="-Dretrolambda.bytecodeVersion=51"/>
     <arg value="-Dretrolambda.defaultMethods=false"/>
     <arg value="-Dretrolambda.quiet=false"/>
-    <arg value="-Dretrolambda.outputDir=C:\Users\Louis\Documents\ProgrammingProjects\geiger_toolbox_ui\target\classes"/>
+    <arg value="-Dretrolambda.outputDir=/Users/nosakharedanielahanor/Desktop/totalCrossWork/Geiger_toolbox_ui/target/classes"/>
     <arg value="-Dretrolambda.javacHacks=false"/>
-    <arg value="-Dretrolambda.inputDir=C:\Users\Louis\Documents\ProgrammingProjects\geiger_toolbox_ui\target\classes"/>
-    <arg value="-javaagent:C:\Users\Louis\Documents\ProgrammingProjects\geiger_toolbox_ui\target/retrolambda/retrolambda.jar"/>
+    <arg value="-Dretrolambda.inputDir=/Users/nosakharedanielahanor/Desktop/totalCrossWork/Geiger_toolbox_ui/target/classes"/>
+    <arg value="-javaagent:/Users/nosakharedanielahanor/Desktop/totalCrossWork/Geiger_toolbox_ui/target/retrolambda/retrolambda.jar"/>
     <arg value="-jar"/>
-    <arg value="C:\Users\Louis\Documents\ProgrammingProjects\geiger_toolbox_ui\target/retrolambda/retrolambda.jar"/>
+    <arg value="/Users/nosakharedanielahanor/Desktop/totalCrossWork/Geiger_toolbox_ui/target/retrolambda/retrolambda.jar"/>
   </exec>
 </target>
 </project>

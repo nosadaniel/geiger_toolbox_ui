@@ -16,8 +16,8 @@ import totalcross.ui.image.ImageException;
 
 public class RecommendationScreen extends BaseScreen{
     TabbedContainer tab;
-    Container userRecommendations;
-    Container deviceRecommendations;
+    Container userRecommendationsContainer;
+    Container deviceRecommendationsContainer;
     Label testLabelUser;
     Label testLabelDevice;
 
@@ -32,12 +32,6 @@ public class RecommendationScreen extends BaseScreen{
             MessageBox.showException(e, true);
         } 
 
-        Label lbWorkInProgress = new Label("Work in Progress");
-        //Label lbTest = new Label("Test");
-        
-        content.add(lbWorkInProgress, CENTER, CENTER);
-        //content.add(lbTest, CENTER, AFTER + 800);
-
     }
     
     
@@ -47,17 +41,18 @@ public class RecommendationScreen extends BaseScreen{
         String[] tabCaptions = {"User", "Device"};
         Image[] icons = { new Image("images/user.png"), new Image("images/device.png")};
 
-        userRecommendations = new Container();
-        userRecommendations.setInsets(0, 0, 0, 0);
+        userRecommendationsContainer = new Container();
+        deviceRecommendationsContainer = new Container();
 
-        deviceRecommendations = new Container();
-        deviceRecommendations.setInsets(0, 0, 0, 0);
+        content.add(userRecommendationsContainer, LEFT,CENTER, FILL, PARENTSIZE);
+        content.add(deviceRecommendationsContainer, LEFT,CENTER, FILL, PARENTSIZE);
+       
         
         testLabelDevice = new Label("Device Recommendations");
         testLabelUser = new Label("User Recommendations");
 
-        userRecommendations.add(testLabelUser, CENTER, CENTER, PREFERRED, PREFERRED);
-        deviceRecommendations.add(testLabelUser, CENTER, CENTER, PREFERRED, PREFERRED);
+        userRecommendationsContainer.add(testLabelUser, CENTER, CENTER);
+        deviceRecommendationsContainer.add(testLabelDevice, CENTER, CENTER);
 
         final TabbedContainer tabs = new TabbedContainer(tabCaptions);
         tabs.setIcons(icons);
@@ -65,19 +60,10 @@ public class RecommendationScreen extends BaseScreen{
         tabs.allSameWidth = true;
         tabs.extraTabHeight = fmH * 2;
         tabs.borderColor = Colors.WHITE;
-        add(tabs, LEFT, TOP, FILL, PARENTSIZE);
-        /*
-        for (int i = 0; i < tabCaptions.length; i++) {
-            //tabs.getContainer(i).add(new Label("Content "+(i+1)), CENTER, CENTER);
-            
-        }
-        */
-      
+        content.add(tabs, LEFT, TOP, FILL, PARENTSIZE);
         
-        tabs.setContainer(0, userRecommendations);
-        tabs.setContainer(1, deviceRecommendations);
-        
-        
+        tabs.getContainer(0).add(userRecommendationsContainer, CENTER, CENTER);
+        tabs.getContainer(1).add(deviceRecommendationsContainer, CENTER, CENTER);
 
     }
 
