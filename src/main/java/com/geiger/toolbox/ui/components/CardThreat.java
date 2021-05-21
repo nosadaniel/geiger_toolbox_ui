@@ -29,14 +29,14 @@ public class CardThreat extends Container{;
     Images riskIcon;
     int indicatorValue;
     String riskLevel;
-    Container screen;
+    Container recommendationScreen;
    
-    public CardThreat(String threatTitle, Images riskIcon, int indicatorValue, String riskLevel, Container screen){
+    public CardThreat(String threatTitle, Images riskIcon, int indicatorValue, String riskLevel, Container recommendationScreen){
             this.threatTitle = threatTitle;
             this.riskIcon = riskIcon;
             this.indicatorValue = indicatorValue;
             this.riskLevel = riskLevel;
-            this.screen =  screen;
+            this.recommendationScreen =  recommendationScreen;
             
     }
 
@@ -71,13 +71,13 @@ public class CardThreat extends Container{;
             btnImprove.setForeColor(Colors.TEXT_ON_P);
             btnImprove.addPressListener(
                 (e) -> {
-                    MaterialWindow info = new MaterialWindow(threatTitle, false, new Presenter<Container>() {  
+                    MaterialWindow materialWindow = new MaterialWindow(threatTitle, false, new Presenter<Container>() {  
                         @Override
                         public Container getView(){
-                            return screen;
+                            return recommendationScreen;
                         }
                     });
-                    info.popup();
+                    materialWindow.popup();
                 });
             
             
