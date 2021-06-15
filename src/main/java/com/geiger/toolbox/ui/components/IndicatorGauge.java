@@ -1,11 +1,13 @@
 package com.geiger.toolbox.ui.components;
 
 import com.geiger.toolbox.util.Colors;
+import com.geiger.toolbox.util.MaterialConstants;
 
 import totalcross.ui.Container;
 import totalcross.ui.chart.Velocimeter;
 import totalcross.ui.event.Event;
 import totalcross.ui.event.TimerEvent;
+import totalcross.util.UnitsConverter;
 
 public class IndicatorGauge extends Container {
     private TimerEvent tt;
@@ -28,7 +30,7 @@ public class IndicatorGauge extends Container {
 			vel.drawValue = false;
 			vel.min = 0;	
     		vel.pointerColor = Colors.PRIMARY;
-			add(vel, CENTER, CENTER, PARENTSIZE, PARENTSIZE);
+			add(vel, RIGHT, TOP, PREFERRED + UnitsConverter.toPixels(DP + 45), PREFERRED+UnitsConverter.toPixels(DP + 45));
 	
 		} catch (Exception e) {
 			e.printStackTrace();

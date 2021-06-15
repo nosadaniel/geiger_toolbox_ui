@@ -20,13 +20,13 @@ public class Fonts {
         nunitoLightDefaultSize = Font.getFont("fonts/Nunito-Light.ttf", false, FONT_DEFAULT_SIZE);
 
         //Nunito bold
-        nunitoBoldFont = Font.getFont("fonts/Nunito-Bold.ttf", true, FONT_DEFAULT_SIZE);
+        nunitoBoldFont = Font.getFont("fonts/Nunito-Bold.ttf", false, FONT_DEFAULT_SIZE);
 
         //Nunito italic
         nunitoItalic = Font.getFont("fonts/Nunito-Italic.ttf", false, FONT_DEFAULT_SIZE);
 
-        nunitoBoldScoreSize = Font.getFont("fonts/Nunito-Bold.ttf", true, 36);
+        nunitoBoldScoreSize = Font.getFont("fonts/Nunito-Bold.ttf", false, 36);
 
-        nunitoRiskLevel = Font.getFont("fonts/Nunito-Bold.ttf", true, 12);
+        nunitoRiskLevel = Font.getFont("fonts/Nunito-Bold.ttf", false, 12);
     }
 }

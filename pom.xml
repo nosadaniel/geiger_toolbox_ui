@@ -6,26 +6,42 @@
 
     <groupId>com.geiger.toolbox</groupId>
     <artifactId>ToolboxUi</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>ToolboxUi</name>
+    <description> Geiger Toolbox </description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <totalcross.activation_key>5443444B5AAEEB90306B00E4</totalcross.activation_key>
+        <totalcross.activation_key>PLACE_HOLDER</totalcross.activation_key>
     </properties>
 
     <dependencies>
-        <!--
+        <!-- <dependency>
+            <groupId>eu.cyber-geiger</groupId>
+            <artifactId>toolbox-storage</artifactId>
+            <version>0.3.3a-SNAPSHOT</version>
+        </dependency> -->
+
+        <!-- <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1.1-jre</version>
+        </dependency> -->
+
+
+       <!-- toolbox-storage dependency -->
         <dependency>
             <groupId>eu.cyber-geiger</groupId>
             <artifactId>toolbox-storage</artifactId>
             <version>0.2.0</version>
         </dependency>
-        -->
+         
+
+        <!-- totalcross-sdk dependency -->
         <dependency>
             <groupId>com.totalcross</groupId>
             <artifactId>totalcross-sdk</artifactId>
-            <version>7.0.4</version>
+            <version>7.1.0</version>
         </dependency>
 
          <dependency>
@@ -33,6 +49,9 @@
             <artifactId>slf4j-simple</artifactId>
             <version>1.5.6</version>
         </dependency>
+
+       
+
     </dependencies>
 
     <repositories>
@@ -71,7 +90,7 @@
                     <name>${project.name}</name>
                     <platforms>
                         <platform>-android</platform>
-                            <platform>-ios</platform>
+                        <platform>-ios</platform>
                     </platforms>
                     <activationKey>${totalcross.activation_key}</activationKey>
                     <!--                    For version 4.4.2 and 5.1.4 or later, Apple certificates are no longer required. -->

@@ -4,6 +4,7 @@ import totalcross.TotalCrossApplication;
 
 public class RunToolboxUiApplication {
     public static void main(String [] args) {
-        TotalCrossApplication.run(ToolboxUi.class, "/r", "5443444B5AAEEB90306B00E4");
+        // , "/scr", "1125x2436", "/scale", "0.33"
+		TotalCrossApplication.run(ToolboxUi.class, "/r", "5443444B5AAEEB90306B00E4");
     }
 }
