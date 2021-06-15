@@ -87,26 +87,26 @@ public class CardThreat extends Container{;
             btnImprove.setForeColor(Colors.TEXT_ON_P);
             btnImprove.addPressListener(
                 (e) -> {
-                    // try{
-                    //     Node node;
-                    //     NodeValue nodeValue;
+                    try{
+                        Node node;
+                        NodeValue nodeValue;
 
-                    //     DatabaseManager databaseManager = new DatabaseManager();
-                    //     databaseManager.connectToDatabase();
-                    //     StorageController storageController = databaseManager.getController();
+                        DatabaseManager databaseManager = new DatabaseManager();
+                        databaseManager.connectToDatabase();
+                        StorageController storageController = databaseManager.getController();
 
                        
-                    //     node = storageController.get(":Local");
-                    //     nodeValue = node.getValue("currentUser");
+                        node = storageController.get(":Local");
+                        nodeValue = node.getValue("currentUser");
 
-                    //         MessageBox mb = new MessageBox(nodeValue.toString(), node.toString());
-                    //         mb.popup();
+                            MessageBox mb = new MessageBox(nodeValue.toString(), node.toString());
+                            mb.popup();
                        
                             
-                    // }
-                    //     catch(StorageException ee){
-                    //         ee.printStackTrace();
-                    //     }
+                    }
+                        catch(StorageException ee){
+                            ee.printStackTrace();
+                        }
 
                     MaterialWindow materialWindow = new MaterialWindow(threatTitle, false, new Presenter<Container>() {  
                         @Override

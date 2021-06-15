@@ -16,11 +16,11 @@
     </properties>
 
     <dependencies>
-        <!-- <dependency>
+        <dependency>
             <groupId>eu.cyber-geiger</groupId>
             <artifactId>toolbox-storage</artifactId>
             <version>0.3.3a-SNAPSHOT</version>
-        </dependency> -->
+        </dependency>
 
         <!-- <dependency>
             <groupId>com.google.guava</groupId>

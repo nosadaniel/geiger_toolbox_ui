@@ -13,7 +13,8 @@ import totalcross.ui.MainWindow;
 
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
-
+import totalcross.notification.Notification;
+import totalcross.notification.NotificationManager;
 import totalcross.ui.Button;
 import totalcross.ui.Container;
 import totalcross.ui.event.UpdateListener;
@@ -36,9 +37,13 @@ public class ScanRiskScreen extends Container{
     JSONObject threatMalware = new JSONObject();
     JSONArray threatTitles;
     JSONArray threatTitleItems;
-               
+            
+    
     int index = 0;
+    Label score, textTitle;
+    String s;
     ScrollContainer scrollContainer;
+    Container topContainer;
     Container spacing = new Container();
     protected boolean allowVerticalScroll = true;
     protected boolean allowHorizontalScroll = false;
@@ -62,22 +67,29 @@ public class ScanRiskScreen extends Container{
 
         int space = UnitsConverter.toPixels(DP + 10);
        
-        
+        topContainer = new Container();
 
         try{
             
             int imageSize = UnitsConverter.toPixels(DP + 130);
 
+            add(scrollContainer, CENTER, AFTER, PARENTSIZE, FILL);
 
-            Label text = new Label("Your Risk Score:");
-            add(text,CENTER, TOP +  MaterialConstants.COMPONENT_SPACING);
+            scrollContainer.add(topContainer, LEFT, AFTER, FILL, PARENTSIZE + 55);
+
+
+            textTitle = new Label("Start scanning your cyber threats:");
+            topContainer.add(textTitle,CENTER, TOP +  MaterialConstants.COMPONENT_SPACING);
     
             Images scanRiskImage = new Images("images/scanRiskButton.png");
-    
-            Label score = new Label("73.5");
+            
+            
+            score = new Label("22.5");
+            score.setVisible(false);
             score.setForeColor(Colors.SCORE_COLOR);
             score.setFont(Fonts.nunitoBoldScoreSize);
-            add(score, CENTER, AFTER + MaterialConstants.COMPONENT_SPACING);
+            
+            topContainer.add(score, CENTER, AFTER + UnitsConverter.toPixels(DP + 5));
     
             ImageControl scanRiskImageControl= new ImageControl( scanRiskImage.getImage()
                             .hwScaledFixedAspectRatio(imageSize, true));
@@ -89,32 +101,44 @@ public class ScanRiskScreen extends Container{
 
             FloatingActionButton scanBtn = new FloatingActionButton(scanRiskImageControl.getImage());
             scanBtn.setIconSize(UnitsConverter.toPixels(DP+95));
-            add(scanBtn, CENTER, AFTER + MaterialConstants.COMPONENT_SPACING);
+            topContainer.add(scanBtn, CENTER, AFTER + MaterialConstants.COMPONENT_SPACING);
             
             scanBtn.addPressListener((e) -> {
                 
                 rescan();
                 updateUi();
+                
+                Notification.Builder builder = new Notification.Builder();
+                Notification notification = builder.title("Geiger Toolbox").text("Change of cyber security threats!").build();
+                try {
+                    Thread.sleep(10000);
+                } catch (InterruptedException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
+                NotificationManager.getInstance().notify(notification);
+                
 			    
              }); 
 
 
             Button btnEmployee = new Button("Employee Risks", Button.BORDER_OUTLINED);
             btnEmployee.setBackForeColors(Colors.PRIMARY, Colors.TEXT_ON_P_LIGHT);
-            add(btnEmployee, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING);
+            topContainer.add(btnEmployee, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING);
     
             Button btnDevice= new Button("Device Risks", Button.BORDER_OUTLINED);
             btnDevice.setBackForeColors(Colors.PRIMARY, Colors.TEXT_ON_P_LIGHT);
-            add(btnDevice, RIGHT - MaterialConstants.BORDER_SPACING, CENTER_OF);
+            topContainer.add(btnDevice, RIGHT - MaterialConstants.BORDER_SPACING, CENTER_OF);
     
             Label currentThreatText= new Label("Current Threats:");
             currentThreatText.setFont(Fonts.nunitoBoldFont);
-            add(currentThreatText,LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.BORDER_SPACING);
+            topContainer.add(currentThreatText,LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMPONENT_SPACING);
     
             Label threatRiskText = new Label("Threat Risk");
-            add(threatRiskText, RIGHT - MaterialConstants.BORDER_SPACING, CENTER_OF);
+           
+            topContainer.add(threatRiskText, RIGHT - MaterialConstants.BORDER_SPACING, CENTER_OF);
 
-            add(scrollContainer, CENTER, AFTER, PARENTSIZE, FILL);
+            // add(scrollContainer, CENTER, AFTER, PARENTSIZE, FILL);
              
          
         }
@@ -180,24 +204,32 @@ public class ScanRiskScreen extends Container{
     private void rescan(){
       
         
-        if(threats.length() != 0){
+        if(threats.length() != index){
             threatTitles = threats.names();
             threatTitleItems = threats.toJSONArray(threatTitles);
+            score.setText("55");
+            score.setVisible(true);
+            score.repaintNow();
+
+            textTitle.setText("Your total Risk Score:");
+            textTitle.repaintNow();
+            System.out.println(s);
             
             for(int i = 0; i< threats.length(); i++){
                 String title = threatTitles.getString(i);
                 JSONObject items = threatTitleItems.getJSONObject(i);
-                // System.out.println(title);
-                // System.out.println(items);
+                
                 int tScore = Integer.parseInt(items.get("threatScore").toString());
                 
                 CardThreat card = new CardThreat(title, new Images(items.get("image").toString()), tScore, items.get("threatRisk").toString(), new RecommendationScreen(title));
                 
                 scrollContainer.add(card, LEFT + gap, AFTER + space,FILL - MaterialConstants.BORDER_SPACING, 130+ DP);
-                
+                // System.out.println(title);
+                // System.out.println(items);
                 
             }
             scrollContainer.add(spacing, LEFT, AFTER + MaterialConstants.TWENTY_DP);
+            
         }
             
     }
