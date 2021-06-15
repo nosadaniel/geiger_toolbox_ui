@@ -169,7 +169,7 @@ public class ScanRiskScreen extends Container{
 
     private void updateUi(){
             
-        //threats.keySet().clear();
+        threats.keySet().clear();
         MainWindow.getMainWindow().removeUpdateListener(updateListener);
         index = 0;
         MainWindow.getMainWindow().addUpdateListener(updateListener);
