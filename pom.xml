@@ -55,6 +55,13 @@
     </dependencies>
 
     <repositories>
+
+        <repository>
+            <id>cyber-geiger-repo</id>
+            <name>cyber-geiger-snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+        
         <repository>
             <id>totalcross-repo</id>
             <name>ip-172-31-40-140-releases</name>
